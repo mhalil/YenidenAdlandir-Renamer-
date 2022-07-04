@@ -11,3 +11,5 @@ Dosya ve Klasör isimlerini, belirlediğiniz parametrelere göre yeniden adland�
 * Dosya adındaki belirlenen kelimeleri silme
 * Dosya adındaki bir kelimeyi başka bir kelime ile değiştirme
 
+## Uygulama Arabirimi;
+![Renamer](Renamer_Arabirim.png)
