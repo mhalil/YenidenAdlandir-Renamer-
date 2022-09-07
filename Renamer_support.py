@@ -45,7 +45,20 @@ def cikar(*args):
 
 def ekle(*args):
     secim = askopenfilename()
+    # Buraya, listeden ListBox'a ekleme fonksiyonu eklenecek
     return secim
+
+def OnEkEkle():
+    print("OnEkEkle komutu çalıştı")
+    if _w1.OnEnEkle.configure(onvalue=1):
+        _w1.OnEkYaz.configure(state='normal')
+        print("OnEkEkle komutu çalıştı IF Blogu")
+
+    else:
+        _w1.OnEkYaz.configure(state='disable')
+        print("OnEkEkle komutu çalıştı ELSE BLOGU")
+
+
 
 if __name__ == '__main__':
     Renamer.start_up()

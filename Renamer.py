@@ -186,6 +186,7 @@ class Toplevel1:
         self.OnEnEkle.configure(justify='left')
         self.OnEnEkle.configure(text='''Ön Ek Ekle :''')
         self.OnEnEkle.configure(variable=self.OnEk)
+        self.OnEnEkle.configure(command=Renamer_support.OnEkEkle) 
 
         self.SonEkEkle = tk.Checkbutton(self.top)
         self.SonEkEkle.place(relx=0.013, rely=0.671, relheight=0.033
