@@ -46,8 +46,12 @@ def cikar(*args):
 def ekle(*args):
     print("Ekle Fonksiyonu çalıştı")
     secim = askopenfilename()
+    print(secim)
     # Buraya, listeden ListBox'a ekleme fonksiyonu eklenecek
-    return secim
+    # return secim
+    # for dosya in secim:
+    #     _w1.Etiket_dosya_sec.S
+        # _w1.Etiket_dosya_sec.SecilenDosyalar.insert('end', dosya)
 
 def OnEkEkle():
     print("OnEkEkle komutu çalıştı")

@@ -49,13 +49,13 @@ class Toplevel1:
         # self.HarfleriTersCevir = tk.IntVar()
         # self.ismiTersCevir = tk.IntVar()
 
-        self.Cerceve_Onizleme_ekrani = tk.LabelFrame(self.top)
-        self.Cerceve_Onizleme_ekrani.place(relx=0.52, rely=0.017, relheight=0.571
+        self.Onizleme_ekrani = tk.LabelFrame(self.top)
+        self.Onizleme_ekrani.place(relx=0.52, rely=0.017, relheight=0.571
                 , relwidth=0.468)
-        self.Cerceve_Onizleme_ekrani.configure(relief='groove')
-        self.Cerceve_Onizleme_ekrani.configure(text='''Yeni İsim Önizleme Ekranı''')
+        self.Onizleme_ekrani.configure(relief='groove')
+        self.Onizleme_ekrani.configure(text='''Yeni İsim Önizleme Ekranı''')
 
-        self.onizle_text = ScrolledText(self.Cerceve_Onizleme_ekrani)
+        self.onizle_text = ScrolledText(self.Onizleme_ekrani)
         self.onizle_text.place(relx=0.028, rely=0.145, relheight=0.825
                 , relwidth=0.946, bordermode='ignore')
         self.onizle_text.configure(background="white")
@@ -65,28 +65,30 @@ class Toplevel1:
         self.onizle_text.configure(selectforeground="white")
         self.onizle_text.configure(wrap="none")
 
-        self.Etiket_Cerceve_Onizleme_ekrani = tk.Label(self.Cerceve_Onizleme_ekrani)
-        self.Etiket_Cerceve_Onizleme_ekrani.place(relx=0.04, rely=0.063, height=21
+        self.Etiket_onizleme_ekrani = tk.Label(self.Onizleme_ekrani)
+        self.Etiket_onizleme_ekrani.place(relx=0.04, rely=0.063, height=21
                 , width=319, bordermode='ignore')
-        self.Etiket_Cerceve_Onizleme_ekrani.configure(anchor='w')
-        self.Etiket_Cerceve_Onizleme_ekrani.configure(compound='left')
-        self.Etiket_Cerceve_Onizleme_ekrani.configure(text='''Adlandırılacak Dosyaların Önizleme Ekranı:''')
+        self.Etiket_onizleme_ekrani.configure(anchor='w')
+        self.Etiket_onizleme_ekrani.configure(compound='left')
+        self.Etiket_onizleme_ekrani.configure(text='''Adlandırılacak Dosyaların Önizleme Ekranı:''')
 
-        self.Cerceve_dosya_sec = tk.LabelFrame(self.top)
-        self.Cerceve_dosya_sec.place(relx=0.013, rely=0.014, relheight=0.571
+        self.Etiket_dosya_sec = tk.LabelFrame(self.top)
+        self.Etiket_dosya_sec.place(relx=0.013, rely=0.014, relheight=0.571
                 , relwidth=0.467)
-        self.Cerceve_dosya_sec.configure(relief='groove')
-        self.Cerceve_dosya_sec.configure(text='''İsimlendirilecek Dosyaları Seçin''')
+        self.Etiket_dosya_sec.configure(relief='groove')
+        self.Etiket_dosya_sec.configure(text='''İsimlendirilecek Dosyaları Seçin''')
 
-        self.SecilenDosyalar = tk.Listbox(self.Cerceve_dosya_sec)
-        self.SecilenDosyalar.place(relx=0.029, rely=0.15, relheight=0.825
+        self.girdi_text = ScrolledText(self.Etiket_dosya_sec)
+        self.girdi_text.place(relx=0.029, rely=0.15, relheight=0.825
                 , relwidth=0.949, bordermode='ignore')
-        self.SecilenDosyalar.configure(background="white")
-        self.SecilenDosyalar.configure(font="TkTextFont")
-        self.SecilenDosyalar.configure(selectbackground="blue")
-        self.SecilenDosyalar.configure(selectforeground="white")
+        self.girdi_text.configure(background="white")
+        self.girdi_text.configure(font="TkTextFont")
+        self.girdi_text.configure(insertborderwidth="3")
+        self.girdi_text.configure(selectbackground="blue")
+        self.girdi_text.configure(selectforeground="white")
+        self.girdi_text.configure(wrap="none")
 
-        self.Buton_cikar = tk.Button(self.Cerceve_dosya_sec)
+        self.Buton_cikar = tk.Button(self.Etiket_dosya_sec)
         self.Buton_cikar.place(relx=0.509, rely=0.058, height=33, width=165
                 , bordermode='ignore')
         self.Buton_cikar.configure(borderwidth="2")
@@ -94,7 +96,7 @@ class Toplevel1:
         self.Buton_cikar.configure(compound='left')
         self.Buton_cikar.configure(text='''Çıkar''')
 
-        self.Buton_ekle = tk.Button(self.Cerceve_dosya_sec)
+        self.Buton_ekle = tk.Button(self.Etiket_dosya_sec)
         self.Buton_ekle.place(relx=0.029, rely=0.058, height=33, width=165
                 , bordermode='ignore')
         self.Buton_ekle.configure(borderwidth="2")
