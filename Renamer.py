@@ -111,14 +111,14 @@ class Toplevel1:
         self.Buton_onizle.configure(compound='left')
         self.Buton_onizle.configure(text='''Önizle''')
 
-        self.DegistirilecekYaz = tk.Entry(self.top)
-        self.DegistirilecekYaz.place(relx=0.253, rely=0.871, height=33
+        self.YerineKoyulacakYazi = tk.Entry(self.top)
+        self.YerineKoyulacakYazi.place(relx=0.253, rely=0.871, height=33
                 , relwidth=0.227)
-        self.DegistirilecekYaz.configure(background="white")
-        self.DegistirilecekYaz.configure(font="TkFixedFont")
-        self.DegistirilecekYaz.configure(selectbackground="blue")
-        self.DegistirilecekYaz.configure(selectforeground="white")
-        self.DegistirilecekYaz.configure(state='disabled')
+        self.YerineKoyulacakYazi.configure(background="white")
+        self.YerineKoyulacakYazi.configure(font="TkFixedFont")
+        self.YerineKoyulacakYazi.configure(selectbackground="blue")
+        self.YerineKoyulacakYazi.configure(selectforeground="white")
+        self.YerineKoyulacakYazi.configure(state='disabled')
 
         self.Etiket_degistirilecek_deger = tk.Label(self.top)
         self.Etiket_degistirilecek_deger.place(relx=0.027, rely=0.879, height=21, width=153)
@@ -165,8 +165,12 @@ class Toplevel1:
         self.Sirali_artir.configure(anchor='w')
         self.Sirali_artir.configure(compound='left')
         self.Sirali_artir.configure(justify='left')
-        self.Sirali_artir.configure(text='''Sıralı Artar''')
+        self.Sirali_artir.configure(text='''Sıralı Artır''')
         self.Sirali_artir.configure(variable=self.SiraliArtir)
+        self.Sirali_artir.configure(command=Renamer_support.SiraliArtir)
+        self.Sirali_artir.configure(onvalue=1) 
+        self.Sirali_artir.configure(offvalue=0)
+
 
         self.BaslDegerYaz = tk.Entry(self.top)
         self.BaslDegerYaz.place(relx=0.333, rely=0.721, height=33
@@ -177,16 +181,18 @@ class Toplevel1:
         self.BaslDegerYaz.configure(selectforeground="white")
         self.BaslDegerYaz.configure(state='disabled')
 
-        self.OnEnEkle = tk.Checkbutton(self.top)
-        self.OnEnEkle.place(relx=0.013, rely=0.614, relheight=0.033
+        self.OnEkEkle = tk.Checkbutton(self.top)
+        self.OnEkEkle.place(relx=0.013, rely=0.614, relheight=0.033
                 , relwidth=0.143)
-        self.OnEnEkle.configure(activebackground="#f9f9f9")
-        self.OnEnEkle.configure(anchor='w')
-        self.OnEnEkle.configure(compound='left')
-        self.OnEnEkle.configure(justify='left')
-        self.OnEnEkle.configure(text='''Ön Ek Ekle :''')
-        self.OnEnEkle.configure(variable=self.OnEk)
-        self.OnEnEkle.configure(command=Renamer_support.OnEkEkle) 
+        self.OnEkEkle.configure(activebackground="#f9f9f9")
+        self.OnEkEkle.configure(anchor='w')
+        self.OnEkEkle.configure(compound='left')
+        self.OnEkEkle.configure(justify='left')
+        self.OnEkEkle.configure(text='''Ön Ek Ekle :''')
+        self.OnEkEkle.configure(variable=self.OnEk)
+        self.OnEkEkle.configure(command=Renamer_support.OnEkEkle) 
+        self.OnEkEkle.configure(onvalue=1) 
+        self.OnEkEkle.configure(offvalue=0)
 
         self.SonEkEkle = tk.Checkbutton(self.top)
         self.SonEkEkle.place(relx=0.013, rely=0.671, relheight=0.033
@@ -197,16 +203,23 @@ class Toplevel1:
         self.SonEkEkle.configure(justify='left')
         self.SonEkEkle.configure(text='''Son Ek Ekle :''')
         self.SonEkEkle.configure(variable=self.SonEk)
+        self.SonEkEkle.configure(command=Renamer_support.SonEkEkle) 
+        self.SonEkEkle.configure(onvalue=1) 
+        self.SonEkEkle.configure(offvalue=0)
 
-        self.Sirali_artir_2 = tk.Checkbutton(self.top)
-        self.Sirali_artir_2.place(relx=0.013, rely=0.786, relheight=0.033
+        self.KarakterKelimeSil = tk.Checkbutton(self.top)
+        self.KarakterKelimeSil.place(relx=0.013, rely=0.786, relheight=0.033
                 , relwidth=0.236)
-        self.Sirali_artir_2.configure(activebackground="#f9f9f9")
-        self.Sirali_artir_2.configure(anchor='w')
-        self.Sirali_artir_2.configure(compound='left')
-        self.Sirali_artir_2.configure(justify='left')
-        self.Sirali_artir_2.configure(text='''Karakter / Kelime Sil :''')
-        self.Sirali_artir_2.configure(variable=self.KarakterSil)
+        self.KarakterKelimeSil.configure(activebackground="#f9f9f9")
+        self.KarakterKelimeSil.configure(anchor='w')
+        self.KarakterKelimeSil.configure(compound='left')
+        self.KarakterKelimeSil.configure(justify='left')
+        self.KarakterKelimeSil.configure(text='''Karakter / Kelime Sil :''')
+        self.KarakterKelimeSil.configure(variable=self.KarakterSil)
+        self.KarakterKelimeSil.configure(command=Renamer_support.KarakterKelimeSil) 
+        self.KarakterKelimeSil.configure(onvalue=1) 
+        self.KarakterKelimeSil.configure(offvalue=0)
+
 
         self.SilYaz = tk.Entry(self.top)
         self.SilYaz.place(relx=0.253, rely=0.779, height=33, relwidth=0.227)
@@ -216,15 +229,18 @@ class Toplevel1:
         self.SilYaz.configure(selectforeground="white")
         self.SilYaz.configure(state='disabled')
 
-        self.Sirali_artir_2_1 = tk.Checkbutton(self.top)
-        self.Sirali_artir_2_1.place(relx=0.013, rely=0.836, relheight=0.033
+        self.DegistirYerineKoy = tk.Checkbutton(self.top)
+        self.DegistirYerineKoy.place(relx=0.013, rely=0.836, relheight=0.033
                 , relwidth=0.236)
-        self.Sirali_artir_2_1.configure(activebackground="#f9f9f9")
-        self.Sirali_artir_2_1.configure(anchor='w')
-        self.Sirali_artir_2_1.configure(compound='left')
-        self.Sirali_artir_2_1.configure(justify='left')
-        self.Sirali_artir_2_1.configure(text='''Değiştir / Yerine Koy''')
-        self.Sirali_artir_2_1.configure(variable=self.Degistir)
+        self.DegistirYerineKoy.configure(activebackground="#f9f9f9")
+        self.DegistirYerineKoy.configure(anchor='w')
+        self.DegistirYerineKoy.configure(compound='left')
+        self.DegistirYerineKoy.configure(justify='left')
+        self.DegistirYerineKoy.configure(text='''Değiştir / Yerine Koy''')
+        self.DegistirYerineKoy.configure(variable=self.Degistir)
+        self.DegistirYerineKoy.configure(command=Renamer_support.DegistirYerineKoy) 
+        self.DegistirYerineKoy.configure(onvalue=1) 
+        self.DegistirYerineKoy.configure(offvalue=0)
 
         self.Etiket_yerine_koyulacak_deger = tk.Label(self.top)
         self.Etiket_yerine_koyulacak_deger.place(relx=0.027, rely=0.936, height=21, width=174)
@@ -233,14 +249,14 @@ class Toplevel1:
         self.Etiket_yerine_koyulacak_deger.configure(compound='left')
         self.Etiket_yerine_koyulacak_deger.configure(text='''Yerine Koyulacak Değer :''')
 
-        self.Girdi_degistirilen_yazi = tk.Entry(self.top)
-        self.Girdi_degistirilen_yazi.place(relx=0.253, rely=0.929, height=33
+        self.DegistirilecekYazi = tk.Entry(self.top)
+        self.DegistirilecekYazi.place(relx=0.253, rely=0.929, height=33
                 , relwidth=0.227)
-        self.Girdi_degistirilen_yazi.configure(background="white")
-        self.Girdi_degistirilen_yazi.configure(font="TkFixedFont")
-        self.Girdi_degistirilen_yazi.configure(selectbackground="blue")
-        self.Girdi_degistirilen_yazi.configure(selectforeground="white")
-        self.Girdi_degistirilen_yazi.configure(state='disabled')
+        self.DegistirilecekYazi.configure(background="white")
+        self.DegistirilecekYazi.configure(font="TkFixedFont")
+        self.DegistirilecekYazi.configure(selectbackground="blue")
+        self.DegistirilecekYazi.configure(selectforeground="white")
+        self.DegistirilecekYazi.configure(state='disabled')
 
         self.RadioButon_kucuk = tk.Radiobutton(self.top)
         self.RadioButon_kucuk.place(relx=0.507, rely=0.607, relheight=0.033

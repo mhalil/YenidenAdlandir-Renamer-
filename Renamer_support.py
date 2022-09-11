@@ -50,15 +50,40 @@ def ekle(*args):
 
 def OnEkEkle():
     print("OnEkEkle komutu çalıştı")
-    if _w1.OnEnEkle.configure(onvalue=1):
+    if _w1.OnEk.get() == 1:
         _w1.OnEkYaz.configure(state='normal')
-        print("OnEkEkle komutu çalıştı IF Blogu")
-
-    else:
+    elif _w1.OnEk.get() == 0:
         _w1.OnEkYaz.configure(state='disable')
-        print("OnEkEkle komutu çalıştı ELSE BLOGU")
 
+def SonEkEkle():
+    print("SonEkEkle komutu çalıştı")
+    if _w1.SonEk.get() == 1:
+        _w1.SonEkYaz.configure(state='normal')
+    elif _w1.SonEk.get() == 0:
+        _w1.SonEkYaz.configure(state='disable')
 
+def SiraliArtir():
+    print("SiraliArtir komutu çalıştı")
+    if _w1.SiraliArtir.get() == 1:
+        _w1.BaslDegerYaz.configure(state='normal')
+    elif _w1.SiraliArtir.get() == 0:
+        _w1.BaslDegerYaz.configure(state='disable')
+
+def KarakterKelimeSil():
+    print("KarakterKelimeSil komutu çalıştı")
+    if _w1.KarakterSil.get() == 1:
+        _w1.SilYaz.configure(state='normal')
+    elif _w1.KarakterSil.get() == 0:
+        _w1.SilYaz.configure(state='disable')
+
+def DegistirYerineKoy():
+    print("DegistirYerineKoy komutu çalıştı")
+    if _w1.Degistir.get() == 1:
+        _w1.DegistirilecekYazi.configure(state='normal')
+        _w1.YerineKoyulacakYazi.configure(state='normal')
+    elif _w1.Degistir.get() == 0:
+        _w1.DegistirilecekYazi.configure(state='disable')
+        _w1.YerineKoyulacakYazi.configure(state='disable')
 
 if __name__ == '__main__':
     Renamer.start_up()
