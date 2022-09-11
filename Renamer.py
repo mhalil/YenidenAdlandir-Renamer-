@@ -42,11 +42,12 @@ class Toplevel1:
         self.SonEk = tk.IntVar()
         self.KarakterSil = tk.IntVar()
         self.Degistir = tk.IntVar()
-        self.KucukHarf = tk.IntVar()
-        self.BuyukHarf = tk.IntVar()
-        self.BasHarflerBuyuk = tk.IntVar()
-        self.HarfleriTersCevir = tk.IntVar()
-        self.ismiTersCevir = tk.IntVar()
+        self.Radio = tk.IntVar()        # Bunu ben ekledim. 
+        # self.KucukHarf = tk.IntVar()
+        # self.BuyukHarf = tk.IntVar()
+        # self.BasHarflerBuyuk = tk.IntVar()
+        # self.HarfleriTersCevir = tk.IntVar()
+        # self.ismiTersCevir = tk.IntVar()
 
         self.Onizleme_ekrani = tk.LabelFrame(self.top)
         self.Onizleme_ekrani.place(relx=0.52, rely=0.017, relheight=0.571
@@ -266,7 +267,9 @@ class Toplevel1:
         self.RadioButon_kucuk.configure(compound='left')
         self.RadioButon_kucuk.configure(justify='left')
         self.RadioButon_kucuk.configure(text='''küçük harf''')
-        self.RadioButon_kucuk.configure(variable=self.KucukHarf)
+        self.RadioButon_kucuk.configure(variable=self.Radio)
+        self.RadioButon_kucuk.configure(command=Renamer_support.KucukHarf)
+        self.RadioButon_kucuk.configure(value=1)
 
         self.RadioButon_buyuk = tk.Radiobutton(self.top)
         self.RadioButon_buyuk.place(relx=0.507, rely=0.664, relheight=0.033
@@ -276,7 +279,10 @@ class Toplevel1:
         self.RadioButon_buyuk.configure(compound='left')
         self.RadioButon_buyuk.configure(justify='left')
         self.RadioButon_buyuk.configure(text='''BÜYÜK HARF''')
-        self.RadioButon_buyuk.configure(variable=self.BuyukHarf)
+        self.RadioButon_buyuk.configure(variable=self.Radio)
+        self.RadioButon_buyuk.configure(command=Renamer_support.BuyukHarf)
+        self.RadioButon_buyuk.configure(value=2)
+        
 
         self.menubar = tk.Menu(top,font="TkMenuFont",bg=_bgcolor,fg=_fgcolor)
         top.configure(menu = self.menubar)
@@ -289,7 +295,9 @@ class Toplevel1:
         self.RadioButon_kelime_basharf_buyuk.configure(compound='left')
         self.RadioButon_kelime_basharf_buyuk.configure(justify='left')
         self.RadioButon_kelime_basharf_buyuk.configure(text='''Kelimelerin Baş Harfleri Büyük''')
-        self.RadioButon_kelime_basharf_buyuk.configure(variable=self.BasHarflerBuyuk)
+        self.RadioButon_kelime_basharf_buyuk.configure(variable=self.Radio)
+        self.RadioButon_kelime_basharf_buyuk.configure(command=Renamer_support.BasHarfBuyuk)
+        self.RadioButon_kelime_basharf_buyuk.configure(value=3)
 
         self.RadioButon_harfler_ters = tk.Radiobutton(self.top)
         self.RadioButon_harfler_ters.place(relx=0.507, rely=0.779, relheight=0.033
@@ -299,7 +307,9 @@ class Toplevel1:
         self.RadioButon_harfler_ters.configure(compound='left')
         self.RadioButon_harfler_ters.configure(justify='left')
         self.RadioButon_harfler_ters.configure(text='''hARFLERİ tERS çEVİR''')
-        self.RadioButon_harfler_ters.configure(variable=self.HarfleriTersCevir)
+        self.RadioButon_harfler_ters.configure(variable=self.Radio)
+        self.RadioButon_harfler_ters.configure(command=Renamer_support.TersHarf)
+        self.RadioButon_harfler_ters.configure(value=4)        
 
         self.RadioButon_ters = tk.Radiobutton(self.top)
         self.RadioButon_ters.place(relx=0.507, rely=0.829, relheight=0.033
@@ -309,7 +319,9 @@ class Toplevel1:
         self.RadioButon_ters.configure(compound='left')
         self.RadioButon_ters.configure(justify='left')
         self.RadioButon_ters.configure(text='''İsmi ters çevir ( riveç sret imsi )''')
-        self.RadioButon_ters.configure(variable=self.ismiTersCevir)
+        self.RadioButon_ters.configure(variable=self.Radio)
+        self.RadioButon_ters.configure(command=Renamer_support.TersIsim)
+        self.RadioButon_ters.configure(value=5)
 
 # The following code is added to facilitate the Scrolled widgets you specified.
 class AutoScroll(object):

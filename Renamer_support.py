@@ -44,6 +44,7 @@ def cikar(*args):
     sys.stdout.flush()
 
 def ekle(*args):
+    print("Ekle Fonksiyonu çalıştı")
     secim = askopenfilename()
     # Buraya, listeden ListBox'a ekleme fonksiyonu eklenecek
     return secim
@@ -84,6 +85,23 @@ def DegistirYerineKoy():
     elif _w1.Degistir.get() == 0:
         _w1.DegistirilecekYazi.configure(state='disable')
         _w1.YerineKoyulacakYazi.configure(state='disable')
+
+def KucukHarf():
+    print("KucukHarf Radio Buton çalıştırıldı")
+
+def BuyukHarf():
+    print("BuyukHarf Radio Buton çalıştırıldı")
+
+def BasHarfBuyuk():
+    print("BasHarfBuyuk Radio Buton çalıştırıldı")
+
+def TersHarf():
+    print("TersHarf Radio Buton çalıştırıldı")
+
+def TersIsim():
+    print("TersIsim Radio Buton çalıştırıldı")
+
+
 
 if __name__ == '__main__':
     Renamer.start_up()
